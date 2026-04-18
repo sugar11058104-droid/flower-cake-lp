@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お花絞りはじめの一歩 | 中村知代已 フラワーケーキ教室</title>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #fdf8f2;
+      --beige:   #f5ede0;
+      --tan:     #e8d5c0;
+      --brown:   #b07d5a;
+      --dark:    #5c3d2e;
+      --pink:    #f2b8c6;
+      --pink-lt: #fde8ef;
+      --sage:    #a8bfa0;
+      --sage-lt: #e8f0e5;
+      --white:   #ffffff;
+      --text:    #4a3728;
+      --sub:     #7a6152;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ── Floating CTA ─────────────────────────── */
+    .floating-cta {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      width: min(340px, 90vw);
+    }
+    .floating-cta a {
+      display: block;
+      background: linear-gradient(135deg, #e07b9e, #c95f82);
+      color: #fff;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(201,95,130,.45);
+      letter-spacing: .05em;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .floating-cta a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(201,95,130,.55); }
+    .floating-cta a span { display: block; font-size: .72rem; font-weight: 400; opacity: .9; margin-top: 2px; }
+
+    /* ── Section commons ──────────────────────── */
+    section { padding: 72px 20px; }
+    .container { max-width: 740px; margin: 0 auto; }
+    .section-badge {
+      display: inline-block;
+      background: var(--pink-lt);
+      color: #c95f82;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--sub);
+      font-size: .95rem;
+      margin-bottom: 40px;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--sage));
+      border-radius: 2px;
+      margin: 16px 0 40px;
+    }
+
+    /* ════════════════════════════════════════════
+       1. FIRST VIEW
+    ════════════════════════════════════════════ */
+    #fv {
+      background: linear-gradient(160deg, #fff9f5 0%, #fde8ef 50%, #e8f0e5 100%);
+      padding: 0;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+    }
+    .fv-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 32px;
+    }
+    .fv-tag {
+      background: var(--white);
+      color: #c95f82;
+      border: 1.5px solid #f2b8c6;
+      border-radius: 30px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      padding: 6px 20px;
+    }
+    .fv-photo {
+      width: min(220px, 55vw);
+      height: min(220px, 55vw);
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--white);
+      box-shadow: 0 8px 32px rgba(176,125,90,.18);
+    }
+    .fv-photo-placeholder {
+      width: min(220px, 55vw);
+      height: min(220px, 55vw);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-lt), var(--sage-lt));
+      border: 5px solid var(--white);
+      box-shadow: 0 8px 32px rgba(176,125,90,.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sub);
+      font-size: .85rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .fv-main-catch {
+      font-size: clamp(1.5rem, 5.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.45;
+      color: var(--dark);
+      letter-spacing: .02em;
+    }
+    .fv-main-catch em {
+      font-style: normal;
+      color: #c95f82;
+    }
+    .fv-sub-catch {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: var(--sub);
+      font-weight: 500;
+    }
+    .fv-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #e07b9e, #c95f82);
+      color: #fff;
+      padding: 18px 48px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(201,95,130,.4);
+      letter-spacing: .06em;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(201,95,130,.5); }
+    .fv-price-hint {
+      font-size: .82rem;
+      color: var(--sub);
+    }
+    .fv-scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--sub);
+      font-size: .72rem;
+      letter-spacing: .15em;
+      margin-top: 8px;
+    }
+    .fv-scroll-bar {
+      width: 1.5px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--pink), transparent);
+      border-radius: 1px;
+    }
+
+    /* ════════════════════════════════════════════
+       2. EMPATHY / TROUBLES
+    ════════════════════════════════════════════ */
+    #troubles {
+      background: var(--white);
+    }
+    .trouble-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .trouble-card {
+      background: var(--cream);
+      border-left: 4px solid var(--pink);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .trouble-no {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--pink), #e07b9e);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+    .trouble-text {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      padding-top: 6px;
+    }
+    .empathy-msg {
+      margin-top: 40px;
+      background: var(--pink-lt);
+      border-radius: 16px;
+      padding: 28px 28px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.9;
+    }
+    .empathy-msg strong {
+      color: #c95f82;
+      font-weight: 800;
+    }
+
+    /* ════════════════════════════════════════════
+       3. SERVICE / BENEFITS
+    ════════════════════════════════════════════ */
+    #service {
+      background: var(--beige);
+    }
+    .service-name-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 28px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 16px rgba(176,125,90,.08);
+    }
+    .service-name-box .en {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      color: var(--sub);
+      margin-bottom: 6px;
+    }
+    .service-name-box h3 {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .service-name-box p {
+      margin-top: 8px;
+      color: var(--sub);
+      font-size: .9rem;
+    }
+    .benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .benefit-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 22px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(176,125,90,.06);
+    }
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--sage-lt), #c8dfc0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .benefit-body {}
+    .benefit-label {
+      font-size: .72rem;
+      color: var(--sage);
+      font-weight: 700;
+      letter-spacing: .15em;
+      margin-bottom: 4px;
+    }
+    .benefit-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .lesson-format {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(176,125,90,.06);
+    }
+    .lesson-format h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .format-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .format-item {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .format-item .f-type {
+      font-size: .72rem;
+      color: var(--sub);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .format-item .f-count {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #c95f82;
+      line-height: 1;
+    }
+    .format-item .f-unit {
+      font-size: .8rem;
+      color: var(--sub);
+      margin-top: 2px;
+    }
+    .target-section {
+      margin-top: 32px;
+    }
+    .target-section h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .target-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .target-tag {
+      background: var(--pink-lt);
+      color: #c95f82;
+      border: 1px solid #f2b8c6;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: .85rem;
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════════════════════
+       4. PRICING & CTA
+    ════════════════════════════════════════════ */
+    #pricing {
+      background: linear-gradient(160deg, #fde8ef 0%, #fff9f5 60%, #e8f0e5 100%);
+    }
+    .price-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    @media (max-width: 500px) {
+      .price-cards { grid-template-columns: 1fr; }
+    }
+    .price-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(176,125,90,.10);
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card.recommend::before {
+      content: 'POPULAR';
+      position: absolute;
+      top: 14px; right: -22px;
+      background: linear-gradient(135deg, #e07b9e, #c95f82);
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      padding: 4px 36px;
+      transform: rotate(35deg);
+    }
+    .price-card .p-type {
+      font-size: .8rem;
+      color: var(--sub);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .price-card .p-name {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .price-card .p-amount {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #c95f82;
+      line-height: 1;
+    }
+    .price-card .p-amount sup {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .price-card .p-tax {
+      font-size: .72rem;
+      color: var(--sub);
+      margin-top: 4px;
+    }
+    .price-card .p-detail {
+      margin-top: 14px;
+      font-size: .82rem;
+      color: var(--sub);
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .cta-box {
+      text-align: center;
+    }
+    .cta-note {
+      margin-top: 14px;
+      font-size: .8rem;
+      color: var(--sub);
+    }
+    .cta-note a {
+      color: #c95f82;
+      text-decoration: underline;
+    }
+
+    /* ════════════════════════════════════════════
+       5. PROFILE
+    ════════════════════════════════════════════ */
+    #profile {
+      background: var(--white);
+    }
+    .profile-card {
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    @media (min-width: 560px) {
+      .profile-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+    .profile-img {
+      flex-shrink: 0;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: 0 4px 20px rgba(176,125,90,.18);
+    }
+    .profile-img-placeholder {
+      flex-shrink: 0;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-lt), var(--sage-lt));
+      border: 4px solid var(--white);
+      box-shadow: 0 4px 20px rgba(176,125,90,.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sub);
+      font-size: .75rem;
+    }
+    .profile-body {}
+    .profile-title {
+      font-size: .78rem;
+      color: #c95f82;
+      font-weight: 700;
+      letter-spacing: .12em;
+      margin-bottom: 4px;
+    }
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .profile-text {
+      font-size: .92rem;
+      color: var(--sub);
+      line-height: 1.9;
+    }
+    .profile-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    @media (max-width: 559px) {
+      .profile-badges { justify-content: center; }
+    }
+    .profile-badge {
+      background: var(--white);
+      border: 1px solid var(--tan);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .76rem;
+      color: var(--sub);
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════════════════════
+       6. FOOTER
+    ════════════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      padding: 48px 24px 80px;
+      text-align: center;
+      color: rgba(255,255,255,.6);
+    }
+    footer .footer-name {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    footer .footer-title {
+      font-size: .82rem;
+      margin-bottom: 24px;
+    }
+    footer .sns-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: background .2s;
+    }
+    footer .sns-link:hover { background: rgba(255,255,255,.18); }
+    footer .sns-link svg { width: 18px; height: 18px; fill: #fff; }
+    footer .copy {
+      font-size: .72rem;
+      opacity: .5;
+      margin-top: 16px;
+    }
+    footer .footer-cta {
+      margin-bottom: 32px;
+    }
+    footer .footer-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #e07b9e, #c95f82);
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(201,95,130,.4);
+      letter-spacing: .05em;
+    }
+
+    /* ── Flower decoration ─────────────────────── */
+    .flower-deco {
+      text-align: center;
+      font-size: 1.6rem;
+      letter-spacing: .3em;
+      margin-bottom: 20px;
+      opacity: .6;
+    }
+
+    /* ── Responsive tweaks ─────────────────────── */
+    @media (max-width: 600px) {
+      section { padding: 56px 16px; }
+      .profile-card { padding: 28px 20px; }
+      .price-card { padding: 24px 16px; }
+      .trouble-card { padding: 16px 18px; }
+      .empathy-msg { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ FLOATING CTA ═══════════════════════════════ -->
+<div class="floating-cta">
+  <a href="https://lin.ee/ocpg55Z" target="_blank" rel="noopener">
+    ✉ 無料相談・お申し込みはこちら
+    <span>LINEで気軽にご連絡ください</span>
+  </a>
+</div>
+
+<!-- ══ 1. FIRST VIEW ══════════════════════════════ -->
+<section id="fv">
+  <div class="fv-inner">
+    <p class="fv-tag">🌸 フラワーケーキ お花絞り講座</p>
+
+    <!-- プロフィール写真 -->
+    <img
+      src="images/profile.jpg"
+      alt="中村知代已"
+      class="fv-photo"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <div class="fv-photo-placeholder" style="display:none;">
+      プロフィール写真<br>profile.jpg
+    </div>
+
+    <!-- キャッチコピー -->
+    <h1 class="fv-main-catch">
+      絞りのパターンを身に着けて、<br>
+      <em>好きなお花を自由に咲かそう！</em>
+    </h1>
+    <p class="fv-sub-catch">
+      あなたが絞るお花で、大切な人を笑顔にできる
+    </p>
+
+    <!-- CTAボタン -->
+    <div class="fv-cta-wrap">
+      <a href="https://lin.ee/ocpg55Z" class="btn-primary" target="_blank" rel="noopener">
+        ✉ 無料相談・お申し込みはこちら
+      </a>
+      <p class="fv-price-hint">動画＋対面 ¥135,000 ／ 動画＋オンライン ¥114,000</p>
+    </div>
+
+    <div class="fv-scroll">
+      <span>SCROLL</span>
+      <div class="fv-scroll-bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2. TROUBLES ════════════════════════════════ -->
+<section id="troubles">
+  <div class="container">
+    <div class="flower-deco">🌷 🌸 🌼</div>
+    <p class="section-badge">こんなお悩みありませんか？</p>
+    <h2 class="section-title">お花絞りに<br>こんな気持ち、抱えていませんか？</h2>
+    <div class="divider"></div>
+
+    <div class="trouble-cards">
+      <div class="trouble-card">
+        <div class="trouble-no">1</div>
+        <p class="trouble-text">お花絞りやってみたいけど、<br>どうしていいかわからない…</p>
+      </div>
+      <div class="trouble-card">
+        <div class="trouble-no">2</div>
+        <p class="trouble-text">上手く絞れない原因が分からなくて、<br>ずっとモヤモヤしている</p>
+      </div>
+      <div class="trouble-card">
+        <div class="trouble-no">3</div>
+        <p class="trouble-text">販売・レッスンにしたいけど、<br>自信が持てなくて一歩踏み出せない</p>
+      </div>
+    </div>
+
+    <div class="empathy-msg">
+      そのお気持ち、とてもよくわかります。<br>
+      でも、<strong>正しい基礎と絞りのパターン</strong>を学ぶことで<br>
+      あなたのお花は必ず変わります。<br><br>
+      そのための講座が、<strong>「お花絞りはじめの一歩」</strong>です。
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3. SERVICE / BENEFITS ══════════════════════ -->
+<section id="service">
+  <div class="container">
+    <p class="section-badge">サービス内容</p>
+    <h2 class="section-title">学べること・得られること</h2>
+    <div class="divider"></div>
+
+    <div class="service-name-box">
+      <p class="en">LESSON</p>
+      <h3>お花絞りはじめの一歩</h3>
+      <p>基礎からしっかり学べる、全5回の充実プログラム</p>
+    </div>
+
+    <h3 style="text-align:center; font-size:1rem; font-weight:700; color:var(--sub); margin-bottom:20px; letter-spacing:.1em;">🌿 受講後に得られる3つの変化</h3>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <div class="benefit-icon">🌹</div>
+        <div class="benefit-body">
+          <p class="benefit-label">BENEFIT 01</p>
+          <p class="benefit-text">絞れる花の種類が格段に増える</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💡</div>
+        <div class="benefit-body">
+          <p class="benefit-label">BENEFIT 02</p>
+          <p class="benefit-text">習っていないお花でも、自分で考えて絞れるようになる</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">⭐</div>
+        <div class="benefit-body">
+          <p class="benefit-label">BENEFIT 03</p>
+          <p class="benefit-text">基礎から理解してやり切ることで、確かな自信が持てるようになる</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-format">
+      <h4>📋 レッスン形式・回数</h4>
+      <div class="format-grid">
+        <div class="format-item">
+          <p class="f-type">対面レッスン</p>
+          <p class="f-count">5</p>
+          <p class="f-unit">回</p>
+        </div>
+        <div class="format-item">
+          <p class="f-type">オンラインレッスン</p>
+          <p class="f-count">5</p>
+          <p class="f-unit">回</p>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:.82rem; color:var(--sub); margin-top:12px;">※ 動画教材つきのプログラムです</p>
+    </div>
+
+    <div class="target-section">
+      <h4>✅ こんな方におすすめです</h4>
+      <div class="target-tags">
+        <span class="target-tag">お花絞り初心者</span>
+        <span class="target-tag">習いなおしたい方</span>
+        <span class="target-tag">販売したい方</span>
+        <span class="target-tag">教室講師の方</span>
+        <span class="target-tag">これから教室を始めたい方</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. PRICING & CTA ════════════════════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="flower-deco">🌸 🌷 🌼</div>
+    <p class="section-badge">料金・お申し込み</p>
+    <h2 class="section-title">あなたに合ったプランを<br>お選びください</h2>
+    <div class="divider"></div>
+
+    <div class="price-cards">
+      <div class="price-card recommend">
+        <p class="p-type">動画＋対面</p>
+        <p class="p-name">対面レッスン<br>5回プラン</p>
+        <p class="p-amount"><sup>¥</sup>135,000</p>
+        <p class="p-tax">税込</p>
+        <p class="p-detail">動画教材＋対面で<br>しっかり学べる</p>
+      </div>
+      <div class="price-card">
+        <p class="p-type">動画＋オンライン</p>
+        <p class="p-name">オンライン<br>5回プラン</p>
+        <p class="p-amount"><sup>¥</sup>114,000</p>
+        <p class="p-tax">税込</p>
+        <p class="p-detail">動画教材＋オンラインで<br>場所を問わず受講</p>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <a href="https://lin.ee/ocpg55Z" class="btn-primary" target="_blank" rel="noopener">
+        ✉ 無料相談・お申し込みはこちら
+      </a>
+      <p class="cta-note">
+        LINEにてお気軽にご相談ください。<br>
+        まずはご質問だけでも大歓迎です 🌸
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5. PROFILE ══════════════════════════════════ -->
+<section id="profile">
+  <div class="container">
+    <p class="section-badge">プロフィール</p>
+    <h2 class="section-title">講師紹介</h2>
+    <div class="divider"></div>
+
+    <div class="profile-card">
+      <img
+        src="images/profile.jpg"
+        alt="中村知代已"
+        class="profile-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+      <div class="profile-img-placeholder" style="display:none;">
+        profile.jpg
+      </div>
+      <div class="profile-body">
+        <p class="profile-title">フラワーケーキ教室主宰</p>
+        <h3 class="profile-name">中村 知代已</h3>
+        <p class="profile-text">
+          社会人から製菓の専門学校へ入学し、卒業後はそのまま学校に就職。シュガークラフトをはじめ、見せるケーキの技術を追求する。<br><br>
+          専業主婦を経てケーキ屋勤務、講師業も復活。2021年より自宅教室をスタートし、現在はフラワーケーキを中心に、技術と楽しさを伝えています。
+        </p>
+        <div class="profile-badges">
+          <span class="profile-badge">🎂 講師歴 約15年</span>
+          <span class="profile-badge">📜 製菓衛生師</span>
+          <span class="profile-badge">🏆 洋菓子一級技能士</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6. FOOTER ═══════════════════════════════════ -->
+<footer>
+  <p class="footer-name">中村 知代已</p>
+  <p class="footer-title">フラワーケーキ教室主宰</p>
+
+  <div class="footer-cta">
+    <a href="https://lin.ee/ocpg55Z" target="_blank" rel="noopener">
+      ✉ 無料相談・お申し込みはこちら
+    </a>
+  </div>
+
+  <a
+    href="https://www.instagram.com/sugar_tree_2021?igsh=cGUxcW9oNGkxdHB4&utm_source=qr"
+    class="sns-link"
+    target="_blank"
+    rel="noopener"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+    @sugar_tree_2021
+  </a>
+
+  <p class="copy">© 2024 中村知代已 フラワーケーキ教室 All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
