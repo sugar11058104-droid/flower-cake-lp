@@ -3,522 +3,704 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お花絞りはじめの一歩 | 中村知代已 フラワーケーキ教室</title>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <title>お花絞り はじめの一歩 | sugar tree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=M+PLUS+Rounded+1c:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --cream:#fdf8f2; --beige:#f5ede0; --tan:#e8d5c0;
-      --pink-m:#e07b9e; --pink-dk:#c95f82; --pink-lt:#fde8ef;
-      --sage-lt:#e8f0e5; --white:#ffffff;
-      --text:#4a3728; --sub:#7a6152; --dark:#5c3d2e;
+      --white:   #ffffff;
+      --ivory:   #faf7f2;
+      --cream:   #f5efe6;
+      --beige:   #ede0d0;
+      --tan:     #d4bfa6;
+      --brown:   #9c7558;
+      --dark:    #4a3020;
+      --gold:    #c9a96e;
+      --gold-lt: #f2e8d8;
+      --rose:    #c47a8a;
+      --rose-lt: #f8eaed;
+      --sage:    #8fa88a;
+      --text:    #3a2a1a;
+      --sub:     #7a6050;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'M PLUS Rounded 1c',sans-serif; background:#fff; color:var(--dark); line-height:1.9; font-size:16px; }
+    body {
+      font-family: 'Shippori Mincho', 'M PLUS Rounded 1c', serif;
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 2;
+      font-size: 16px;
+    }
 
-    /* floating */
-    .floating-cta { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:999; width:min(340px,90vw); }
-    .floating-cta a { display:block; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; text-align:center; padding:15px 24px; border-radius:50px; font-weight:800; font-size:.95rem; text-decoration:none; box-shadow:0 6px 24px rgba(201,95,130,.45); }
-    .floating-cta a span { display:block; font-size:.72rem; font-weight:400; opacity:.9; margin-top:2px; }
+    /* ── floating CTA ── */
+    .float-cta { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 999; width: min(340px, 90vw); }
+    .float-cta a { display: block; background: linear-gradient(135deg, #c47a8a, #a85a6e); color: #fff; text-align: center; padding: 15px 24px; border-radius: 4px; font-weight: 700; font-size: .95rem; text-decoration: none; box-shadow: 0 4px 20px rgba(168,90,110,.4); letter-spacing: .1em; font-family: 'Shippori Mincho', serif; }
+    .float-cta a span { display: block; font-size: .72rem; font-weight: 400; opacity: .85; margin-top: 3px; letter-spacing: .05em; }
 
-    /* helpers */
-    .container { max-width:680px; margin:0 auto; padding:0 20px; }
-    section { padding:64px 20px; }
-    .sec-label { display:inline-block; background:var(--pink-lt); color:var(--pink-dk); font-size:.72rem; font-weight:700; letter-spacing:.18em; padding:4px 16px; border-radius:20px; margin-bottom:10px; }
-    .sec-title { font-size:clamp(1.35rem,4.5vw,2rem); font-weight:800; line-height:1.45; margin-bottom:8px; }
-    .divider { width:44px; height:3px; background:linear-gradient(90deg,var(--pink-m),#a8bfa0); border-radius:2px; margin:14px 0 36px; }
-    .btn { display:inline-block; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; padding:18px 48px; border-radius:50px; font-weight:800; font-size:1rem; text-decoration:none; box-shadow:0 6px 24px rgba(201,95,130,.4); letter-spacing:.06em; }
-    .btn-wrap { text-align:center; }
-    .btn-note { font-size:.8rem; color:var(--sub); margin-top:10px; }
+    /* ── helpers ── */
+    .container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 24px; }
+    .sec-en { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .7rem; font-weight: 400; letter-spacing: .35em; color: var(--gold); margin-bottom: 10px; display: block; }
+    .sec-title { font-size: clamp(1.4rem, 4vw, 2.1rem); font-weight: 700; line-height: 1.5; margin-bottom: 6px; color: var(--dark); }
+    .sec-sub { font-size: .92rem; color: var(--sub); margin-bottom: 36px; font-weight: 400; }
+    .rule { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 16px 0 40px; }
+    .rule-short { width: 40px; height: 2px; background: var(--gold); margin: 14px 0 36px; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #c47a8a, #a85a6e);
+      color: #fff; padding: 18px 56px; border-radius: 4px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(168,90,110,.35);
+      letter-spacing: .12em; font-family: 'Shippori Mincho', serif;
+    }
+    .btn-wrap { text-align: center; }
+    .btn-note { font-size: .8rem; color: var(--sub); margin-top: 10px; letter-spacing: .05em; }
 
-    /* photo placeholder */
-    .ph-box { width:100%; border-radius:16px; background:linear-gradient(135deg,var(--pink-lt),var(--sage-lt)); display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--sub); font-size:.82rem; gap:8px; text-align:center; border:2px dashed var(--tan); }
-    .ph-box .ic { font-size:2rem; opacity:.45; }
+    /* ── img helpers ── */
+    .img-frame { width: 100%; overflow: hidden; background: var(--cream); }
+    .img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ph { width: 100%; height: 100%; background: linear-gradient(135deg, var(--rose-lt), var(--gold-lt)); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--sub); font-size: .8rem; gap: 8px; }
+    .ph .ic { font-size: 2rem; opacity: .4; }
 
-    /* ─ FV ─ */
-    #fv { background:linear-gradient(160deg,#fff9f5 0%,#fde8ef 55%,#e8f0e5 100%); padding:0; min-height:100svh; display:flex; align-items:center; }
-    .fv-inner { max-width:680px; margin:0 auto; padding:56px 24px 80px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:28px; }
-    .fv-tag { background:#fff; color:var(--pink-dk); border:1.5px solid #f2b8c6; border-radius:30px; font-size:.8rem; font-weight:700; letter-spacing:.15em; padding:6px 20px; }
-    .fv-hero { width:100%; max-width:480px; aspect-ratio:4/3; border-radius:20px; overflow:hidden; box-shadow:0 8px 40px rgba(176,125,90,.18); }
-    .fv-hero img,.fv-hero .ph-box { width:100%; height:100%; }
-    .fv-catch { font-size:clamp(1.5rem,5.5vw,2.3rem); font-weight:800; line-height:1.45; }
-    .fv-catch em { font-style:normal; color:var(--pink-dk); }
-    .fv-sub { font-size:clamp(1rem,3vw,1.15rem); color:var(--sub); }
-    .fv-mini { display:flex; align-items:center; gap:12px; background:#fff; border-radius:50px; padding:8px 20px 8px 8px; box-shadow:0 2px 12px rgba(176,125,90,.1); }
-    .fv-mini img,.fv-mini .av { width:44px; height:44px; border-radius:50%; }
-    .fv-mini .av { background:var(--pink-lt); display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
-    .fv-mini .nm { font-size:.85rem; font-weight:700; }
-    .fv-mini .tt { font-size:.72rem; color:var(--sub); }
-    .scroll-hint { display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--sub); font-size:.7rem; letter-spacing:.15em; }
-    .scroll-bar { width:1.5px; height:36px; background:linear-gradient(to bottom,var(--pink-m),transparent); }
+    /* ════ 1. FV ════ */
+    #fv { padding: 0; background: var(--ivory); }
+    .fv-hero { width: 100%; max-height: 90svh; overflow: hidden; position: relative; }
+    .fv-hero img { width: 100%; height: 90svh; object-fit: cover; display: block; }
+    .fv-hero .ph { height: 90svh; }
+    .fv-hero-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(74,48,32,.7) 0%, transparent 100%);
+      padding: 60px 32px 40px;
+      text-align: center; color: #fff;
+    }
+    .fv-hero-overlay .tag { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .72rem; letter-spacing: .25em; opacity: .85; margin-bottom: 12px; }
+    .fv-hero-overlay h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 700; line-height: 1.5; text-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .fv-hero-overlay h1 em { font-style: normal; color: #f7d9a0; }
+    .fv-hero-overlay p { font-size: clamp(.95rem, 2.5vw, 1.1rem); opacity: .9; margin-top: 12px; font-weight: 400; }
+    .fv-bottom {
+      background: var(--dark);
+      padding: 32px 24px;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .fv-bottom .prof-mini { display: flex; align-items: center; gap: 12px; }
+    .fv-bottom .prof-mini img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+    .fv-bottom .prof-mini .av { width: 48px; height: 48px; border-radius: 50%; background: var(--rose-lt); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; border: 2px solid var(--gold); }
+    .fv-bottom .prof-mini .nm { color: #fff; font-size: .9rem; font-weight: 600; text-align: left; }
+    .fv-bottom .prof-mini .tt { color: rgba(255,255,255,.6); font-size: .72rem; }
+    .fv-scroll { display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,.5); font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .65rem; letter-spacing: .2em; padding-bottom: 8px; }
+    .fv-scroll-bar { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--gold), transparent); }
 
-    /* ─ WORKS ─ */
-    #works { background:var(--cream); }
-    .works-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:12px; }
-    .works-grid .ph-box { aspect-ratio:1/1; }
-    .works-wide { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .works-wide .ph-box { aspect-ratio:4/3; }
-    .works-grid img,.works-wide img { width:100%; height:100%; object-fit:cover; border-radius:14px; }
+    /* ════ 2. GALLERY ════ */
+    #gallery { background: var(--white); padding: 80px 0; }
+    #gallery .container { padding: 0 24px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px; }
+    .gallery-grid .img-frame { aspect-ratio: 1/1; }
+    .gallery-wide { display: grid; grid-template-columns: 2fr 1fr; gap: 3px; }
+    .gallery-wide .img-frame:first-child { aspect-ratio: auto; }
+    .gallery-wide .img-frame:last-child { aspect-ratio: 1/1; }
 
-    /* ─ TROUBLES ─ */
-    #troubles { background:#fff; }
-    .trouble-list { display:flex; flex-direction:column; gap:14px; }
-    .trouble-item { background:var(--cream); border-left:4px solid var(--pink-m); border-radius:12px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; }
-    .trouble-item .no { flex-shrink:0; width:34px; height:34px; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem; }
-    .trouble-item p { font-size:.97rem; font-weight:500; padding-top:5px; }
-    .trouble-msg { margin-top:32px; background:var(--pink-lt); border-radius:16px; padding:26px 24px; text-align:center; font-size:1rem; font-weight:500; line-height:1.9; }
-    .trouble-msg strong { color:var(--pink-dk); font-weight:800; }
+    /* ════ 3. TROUBLES ════ */
+    #troubles { background: var(--ivory); }
+    .trouble-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+    .trouble-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 22px 24px;
+      border: 1px solid var(--beige);
+      background: var(--white);
+    }
+    .trouble-item .no {
+      flex-shrink: 0; width: 36px; height: 36px;
+      border: 1px solid var(--gold); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700; font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+    .trouble-item p { font-size: .97rem; padding-top: 6px; line-height: 1.8; }
+    .trouble-msg {
+      background: var(--dark); color: #fff;
+      padding: 32px 28px; text-align: center;
+      font-size: 1rem; line-height: 2;
+    }
+    .trouble-msg strong { color: #f7d9a0; }
 
-    /* ─ VIDEO ─ */
-    #video-sec { background:var(--beige); }
-    .video-wrap { width:100%; max-width:560px; margin:0 auto; aspect-ratio:16/9; border-radius:16px; overflow:hidden; box-shadow:0 8px 32px rgba(92,61,46,.15); background:#2d1a13; display:flex; flex-direction:column; align-items:center; justify-content:center; color:rgba(255,255,255,.7); gap:10px; }
-    .video-wrap iframe,.video-wrap video { width:100%; height:100%; border:none; }
+    /* ════ 4. VIDEO ════ */
+    #video-sec { background: var(--cream); }
+    .video-wrap {
+      max-width: 560px; margin: 0 auto;
+      aspect-ratio: 9/16;
+      background: #1a0f0a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6); gap: 12px;
+    }
+    .video-wrap video { width: 100%; height: 100%; object-fit: cover; }
+    .video-wrap iframe { width: 100%; height: 100%; border: none; }
 
-    /* ─ BENEFITS ─ */
-    #benefits { background:#fff; }
-    .benefit-cards { display:flex; flex-direction:column; gap:16px; }
-    .benefit-card { background:var(--cream); border-radius:16px; padding:22px; display:flex; gap:16px; align-items:flex-start; }
-    .benefit-card .num { flex-shrink:0; width:44px; height:44px; background:linear-gradient(135deg,var(--sage-lt),#c0d8b8); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
-    .benefit-card .label { font-size:.7rem; color:#a8bfa0; font-weight:700; letter-spacing:.15em; margin-bottom:4px; }
-    .benefit-card .text { font-size:1rem; font-weight:700; }
-    .benefit-card .desc { font-size:.88rem; color:var(--sub); margin-top:4px; }
+    /* ════ 5. BENEFITS ════ */
+    #benefits { background: var(--white); }
+    .benefit-list { display: flex; flex-direction: column; gap: 20px; }
+    .benefit-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 24px; border-bottom: 1px solid var(--beige);
+    }
+    .benefit-item:last-child { border-bottom: none; }
+    .benefit-num {
+      flex-shrink: 0; font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 2rem; font-weight: 700; color: var(--gold);
+      line-height: 1; width: 40px; text-align: center;
+    }
+    .benefit-body {}
+    .benefit-label { font-size: .7rem; letter-spacing: .2em; color: var(--gold); font-family: 'M PLUS Rounded 1c', sans-serif; margin-bottom: 4px; }
+    .benefit-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+    .benefit-desc { font-size: .88rem; color: var(--sub); line-height: 1.8; }
 
-    /* ─ BEFORE/AFTER ─ */
-    #before-after { background:var(--cream); }
-    .ba-cards { display:flex; flex-direction:column; gap:20px; }
-    .ba-card { background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(176,125,90,.1); }
-    .ba-imgs { display:grid; grid-template-columns:1fr 1fr; }
-    .ba-img-wrap { position:relative; aspect-ratio:1/1; overflow:hidden; }
-    .ba-img-wrap img,.ba-img-wrap .ph-box { width:100%; height:100%; border-radius:0; border:none; }
-    .ba-badge { position:absolute; top:8px; left:8px; background:var(--dark); color:#fff; font-size:.7rem; font-weight:700; padding:3px 10px; border-radius:20px; }
-    .ba-badge.after { background:var(--pink-dk); }
-    .ba-text { padding:16px 20px; }
-    .ba-text strong { display:block; font-size:1rem; font-weight:700; margin-bottom:4px; }
-    .ba-text p { font-size:.9rem; color:var(--sub); }
+    /* ════ 6. LESSON PHOTOS ════ */
+    #lesson-photos { background: var(--ivory); }
+    .lesson-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .lesson-photo-grid .img-frame { aspect-ratio: 4/3; }
+    .lesson-caption { text-align: center; font-size: .85rem; color: var(--sub); margin-top: 20px; }
 
-    /* ─ LESSON ─ */
-    #lesson { background:#fff; }
-    .lesson-box { background:var(--cream); border-radius:20px; padding:32px 24px; }
-    .lesson-box h3 { font-size:1rem; font-weight:700; text-align:center; margin-bottom:20px; }
-    .lesson-steps { display:flex; flex-direction:column; gap:12px; }
-    .lesson-step { display:flex; gap:14px; align-items:flex-start; background:#fff; border-radius:12px; padding:14px 16px; }
-    .step-num { flex-shrink:0; width:32px; height:32px; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.82rem; }
-    .step-title { font-weight:700; font-size:.95rem; }
-    .step-desc { font-size:.83rem; color:var(--sub); margin-top:2px; }
-    .lesson-format { margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .format-box { background:#fff; border-radius:12px; padding:16px; text-align:center; }
-    .format-box .ftype { font-size:.75rem; color:var(--sub); margin-bottom:4px; }
-    .format-box .fnum { font-size:2rem; font-weight:800; color:var(--pink-dk); line-height:1; }
-    .format-box .funit { font-size:.8rem; color:var(--sub); }
+    /* ════ 7. COURSE DETAIL ════ */
+    #course { background: var(--white); }
+    .course-box { border: 1px solid var(--beige); padding: 36px 32px; }
+    .course-box h3 { font-size: 1rem; font-weight: 700; text-align: center; margin-bottom: 28px; letter-spacing: .1em; }
+    .step-list { display: flex; flex-direction: column; }
+    .step-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--beige); }
+    .step-item:last-child { border-bottom: none; }
+    .step-no { flex-shrink: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .7rem; letter-spacing: .1em; color: var(--gold); padding-top: 3px; width: 60px; }
+    .step-text { font-size: .95rem; font-weight: 600; }
+    .step-desc { font-size: .83rem; color: var(--sub); margin-top: 2px; }
+    .course-format { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .format-item { background: var(--ivory); padding: 20px; text-align: center; }
+    .format-item .ftype { font-size: .72rem; color: var(--sub); letter-spacing: .1em; margin-bottom: 6px; font-family: 'M PLUS Rounded 1c', sans-serif; }
+    .format-item .fnum { font-size: 2.2rem; font-weight: 700; color: var(--rose); line-height: 1; }
+    .format-item .funit { font-size: .82rem; color: var(--sub); }
 
-    /* ─ VOICE ─ */
-    #voice { background:var(--beige); }
-    .voice-cards { display:flex; flex-direction:column; gap:20px; }
-    .voice-card { background:#fff; border-radius:20px; padding:22px; display:flex; gap:16px; align-items:flex-start; box-shadow:0 2px 12px rgba(176,125,90,.07); }
-    .voice-av { flex-shrink:0; width:64px; height:64px; border-radius:50%; overflow:hidden; border:3px solid var(--pink-lt); }
-    .voice-av img,.voice-av .ph-box { width:100%; height:100%; border-radius:50%; border:none; }
-    .voice-name { font-weight:700; font-size:.9rem; margin-bottom:2px; }
-    .voice-stars { color:#f5a623; font-size:.88rem; letter-spacing:.1em; margin-bottom:6px; }
-    .voice-text { font-size:.88rem; color:var(--sub); line-height:1.8; }
-    .voice-photos { margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-    .voice-photos .ph-box { aspect-ratio:1/1; border-radius:10px; font-size:.65rem; }
-    .voice-photos img { width:100%; height:100%; object-fit:cover; border-radius:10px; }
+    /* ════ 8. BEFORE/AFTER ════ */
+    #ba { background: var(--ivory); }
+    .ba-list { display: flex; flex-direction: column; gap: 24px; }
+    .ba-card { background: var(--white); border: 1px solid var(--beige); }
+    .ba-imgs { display: grid; grid-template-columns: 1fr 1fr; }
+    .ba-img-wrap { position: relative; }
+    .ba-img-wrap .img-frame { aspect-ratio: 1/1; border-radius: 0; }
+    .ba-label { position: absolute; top: 10px; left: 10px; background: var(--dark); color: #fff; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .65rem; letter-spacing: .12em; padding: 3px 10px; }
+    .ba-label.after { background: var(--rose); }
+    .ba-text { padding: 18px 20px; }
+    .ba-text strong { display: block; font-size: .95rem; margin-bottom: 4px; }
+    .ba-text p { font-size: .87rem; color: var(--sub); }
 
-    /* ─ TARGET ─ */
-    #target { background:#fff; }
-    .target-checks { display:flex; flex-direction:column; gap:10px; }
-    .target-check { display:flex; gap:12px; align-items:center; background:var(--cream); border-radius:10px; padding:12px 16px; font-size:.95rem; font-weight:500; }
-    .target-check .ck { color:var(--pink-dk); font-weight:800; font-size:1.1rem; }
+    /* ════ 9. VOICE ════ */
+    #voice { background: var(--cream); }
+    .voice-list { display: flex; flex-direction: column; gap: 24px; }
+    .voice-card { background: var(--white); padding: 28px 24px; border-top: 3px solid var(--gold); }
+    .voice-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .voice-av { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold-lt); flex-shrink: 0; }
+    .voice-av img, .voice-av .ph { width: 100%; height: 100%; }
+    .voice-name { font-weight: 700; font-size: .92rem; }
+    .voice-stars { color: #c9a96e; font-size: .82rem; letter-spacing: .1em; margin-top: 2px; }
+    .voice-text { font-size: .88rem; color: var(--sub); line-height: 1.9; }
+    .voice-works { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .voice-works .img-frame { aspect-ratio: 1/1; }
 
-    /* ─ PRICING ─ */
-    #pricing { background:linear-gradient(160deg,var(--pink-lt) 0%,#fff9f5 60%,var(--sage-lt) 100%); }
-    .price-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px; }
-    @media(max-width:480px){.price-cards{grid-template-columns:1fr;}}
-    .price-card { background:#fff; border-radius:20px; padding:28px 18px; text-align:center; box-shadow:0 4px 20px rgba(176,125,90,.1); position:relative; overflow:hidden; }
-    .price-card.pop::before { content:'POPULAR'; position:absolute; top:14px; right:-24px; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; font-size:.62rem; font-weight:800; letter-spacing:.1em; padding:4px 36px; transform:rotate(35deg); }
-    .price-card .ptype { font-size:.78rem; color:var(--sub); margin-bottom:6px; }
-    .price-card .pname { font-size:.95rem; font-weight:700; margin-bottom:14px; line-height:1.4; }
-    .price-card .pamount { font-size:2.1rem; font-weight:800; color:var(--pink-dk); line-height:1; }
-    .price-card .pamount sup { font-size:.95rem; }
-    .price-card .ptax { font-size:.7rem; color:var(--sub); margin-top:4px; }
-    .price-card .pdetail { margin-top:12px; background:var(--cream); border-radius:8px; padding:8px 10px; font-size:.8rem; color:var(--sub); line-height:1.6; }
+    /* ════ 10. TARGET ════ */
+    #target { background: var(--white); }
+    .target-list { display: flex; flex-direction: column; gap: 10px; }
+    .target-item { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--ivory); }
+    .target-item .mark { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
+    .target-item span { font-size: .95rem; }
 
-    /* ─ PROFILE ─ */
-    #profile { background:#fff; }
-    .profile-wrap { background:var(--cream); border-radius:24px; padding:36px 28px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; }
-    @media(min-width:540px){.profile-wrap{flex-direction:row;text-align:left;align-items:flex-start;}}
-    .profile-photo { flex-shrink:0; width:150px; height:150px; border-radius:50%; overflow:hidden; border:5px solid #fff; box-shadow:0 4px 20px rgba(176,125,90,.18); }
-    .profile-photo img,.profile-photo .ph-box { width:100%; height:100%; border-radius:50%; border:none; }
-    .profile-role { font-size:.75rem; color:var(--pink-dk); font-weight:700; letter-spacing:.12em; margin-bottom:4px; }
-    .profile-name { font-size:1.5rem; font-weight:800; margin-bottom:12px; }
-    .profile-text { font-size:.9rem; color:var(--sub); line-height:1.9; }
-    .profile-badges { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    @media(max-width:539px){.profile-badges{justify-content:center;}}
-    .profile-badge { background:#fff; border:1px solid var(--tan); border-radius:20px; padding:4px 14px; font-size:.75rem; color:var(--sub); }
+    /* ════ 11. PRICING ════ */
+    #pricing { background: var(--dark); }
+    #pricing .sec-en { color: var(--gold); }
+    #pricing .sec-title { color: #fff; }
+    #pricing .rule-short { background: var(--gold); }
+    .price-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+    @media(max-width: 480px) { .price-cards { grid-template-columns: 1fr; } }
+    .price-card { background: rgba(255,255,255,.06); border: 1px solid rgba(201,169,110,.4); padding: 28px 20px; text-align: center; position: relative; }
+    .price-card.pop { border-color: var(--gold); }
+    .price-card.pop::before { content: 'POPULAR'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--dark); font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .62rem; font-weight: 700; letter-spacing: .15em; padding: 3px 20px; }
+    .price-card .ptype { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .72rem; color: rgba(255,255,255,.5); letter-spacing: .1em; margin-bottom: 8px; }
+    .price-card .pname { font-size: .95rem; color: rgba(255,255,255,.85); margin-bottom: 18px; line-height: 1.5; }
+    .price-card .pamount { font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .price-card .pamount sup { font-size: 1rem; }
+    .price-card .ptax { font-size: .7rem; color: rgba(255,255,255,.4); margin-top: 4px; font-family: 'M PLUS Rounded 1c', sans-serif; }
+    .price-card .pdetail { margin-top: 14px; font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+    #pricing .btn { background: var(--gold); color: var(--dark); box-shadow: 0 4px 20px rgba(201,169,110,.35); }
+    #pricing .btn-note { color: rgba(255,255,255,.45); }
 
-    /* ─ FAQ ─ */
-    #faq { background:var(--cream); }
-    .faq-list { display:flex; flex-direction:column; gap:12px; }
-    .faq-item { background:#fff; border-radius:14px; }
-    .faq-q { display:flex; gap:12px; align-items:flex-start; padding:18px 20px; font-weight:700; font-size:.95rem; }
-    .faq-q .ql { flex-shrink:0; width:28px; height:28px; background:var(--pink-lt); color:var(--pink-dk); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem; }
-    .faq-a { padding:0 20px 18px 60px; font-size:.9rem; color:var(--sub); line-height:1.8; }
+    /* ════ 12. PROFILE ════ */
+    #profile { background: var(--ivory); }
+    .profile-wrap { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+    @media(min-width: 560px) { .profile-wrap { flex-direction: row; align-items: flex-start; } }
+    .profile-photo { flex-shrink: 0; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 4px solid var(--white); box-shadow: 0 4px 24px rgba(74,48,32,.15); }
+    .profile-photo img, .profile-photo .ph { width: 100%; height: 100%; }
+    .profile-body { text-align: center; }
+    @media(min-width: 560px) { .profile-body { text-align: left; } }
+    .profile-role { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .72rem; color: var(--gold); letter-spacing: .15em; margin-bottom: 4px; }
+    .profile-name { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; }
+    .profile-text { font-size: .9rem; color: var(--sub); line-height: 2; }
+    .profile-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; justify-content: center; }
+    @media(min-width: 560px) { .profile-badges { justify-content: flex-start; } }
+    .profile-badge { border: 1px solid var(--tan); padding: 4px 14px; font-size: .75rem; color: var(--sub); font-family: 'M PLUS Rounded 1c', sans-serif; }
 
-    /* ─ FOOTER ─ */
-    footer { background:var(--dark); padding:52px 24px 88px; text-align:center; color:rgba(255,255,255,.6); }
-    footer .fname { color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:4px; }
-    footer .ftitle { font-size:.82rem; margin-bottom:28px; }
-    .footer-btn { display:inline-block; background:linear-gradient(135deg,var(--pink-m),var(--pink-dk)); color:#fff; padding:16px 48px; border-radius:50px; font-weight:800; font-size:1rem; text-decoration:none; box-shadow:0 4px 20px rgba(201,95,130,.4); margin-bottom:24px; }
-    .sns-link { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#fff; text-decoration:none; padding:10px 24px; border-radius:30px; font-size:.88rem; margin-bottom:24px; }
-    .sns-link svg { width:18px; height:18px; fill:#fff; }
-    footer .copy { font-size:.72rem; opacity:.45; }
+    /* ════ 13. FAQ ════ */
+    #faq { background: var(--white); }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--beige); }
+    .faq-q { display: flex; gap: 14px; padding: 20px 4px; font-weight: 700; font-size: .95rem; align-items: flex-start; }
+    .faq-q .ql { flex-shrink: 0; color: var(--gold); font-size: 1.1rem; font-weight: 700; padding-top: 1px; }
+    .faq-a { padding: 0 4px 20px 30px; font-size: .88rem; color: var(--sub); line-height: 1.9; font-weight: 400; }
 
-    @media(max-width:600px){section{padding:52px 16px;}.lesson-box{padding:24px 16px;}.profile-wrap{padding:28px 16px;}}
+    /* ════ 14. FOOTER ════ */
+    footer { background: var(--dark); padding: 56px 24px 88px; text-align: center; color: rgba(255,255,255,.5); }
+    footer .fname { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; letter-spacing: .1em; }
+    footer .ftitle { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .78rem; margin-bottom: 28px; letter-spacing: .1em; }
+    .footer-btn { display: inline-block; background: var(--gold); color: var(--dark); padding: 16px 48px; font-weight: 700; font-size: .95rem; text-decoration: none; letter-spacing: .1em; margin-bottom: 24px; font-family: 'Shippori Mincho', serif; }
+    .sns-link { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.2); color: #fff; text-decoration: none; padding: 10px 24px; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .85rem; margin-bottom: 24px; }
+    .sns-link svg { width: 16px; height: 16px; fill: #fff; }
+    footer .copy { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: .7rem; opacity: .35; }
+
+    @media(max-width: 600px) {
+      section { padding: 60px 16px; }
+      .course-box { padding: 28px 18px; }
+    }
   </style>
 </head>
 <body>
 
-<div class="floating-cta">
+<!-- floating CTA -->
+<div class="float-cta">
   <a href="https://lin.ee/ocpg55Z" target="_blank" rel="noopener">
-    ✉ 無料相談・お申し込みはこちら
-    <span>LINEでお気軽にご連絡ください 🌸</span>
+    ご相談・お申し込みはこちら
+    <span>LINEよりお気軽にどうぞ</span>
   </a>
 </div>
 
-<!-- 1. FV -->
+<!-- ════ 1. FV ════ -->
 <section id="fv">
-  <div class="fv-inner">
-    <p class="fv-tag">🌸 フラワーケーキ お花絞り講座</p>
-    <div class="fv-hero">
-      <img src="images/hero.jpg" alt="フラワーケーキ作品"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="ph-box"><span class="ic">🌹</span><span>メイン作品写真<br>images/hero.jpg</span></div>
+  <div class="fv-hero">
+    <img src="images/hero.jpg" alt="お花絞りはじめの一歩"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="ph" style="display:none;height:90svh;">
+      <span class="ic">🌸</span><span>hero.jpg</span>
     </div>
-    <h1 class="fv-catch">絞りのパターンを身に着けて、<br><em>好きなお花を自由に咲かそう！</em></h1>
-    <p class="fv-sub">あなたが絞るお花で、大切な人を笑顔にできる</p>
-    <div class="fv-mini">
+    <div class="fv-hero-overlay">
+      <p class="tag">— sugar tree —</p>
+      <h1>絞りのパターンを身に着けて、<br><em>好きなお花を自由に咲かそう</em></h1>
+      <p>あなたが絞るお花で、大切な人を笑顔にできる</p>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener" style="background:var(--gold);color:var(--dark);">ご相談・お申し込みはこちら</a>
+    <p style="font-family:'M PLUS Rounded 1c',sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);letter-spacing:.05em;">動画＋対面 ¥135,000 ／ 動画＋オンライン ¥114,000（税込）</p>
+    <div class="prof-mini">
       <img src="images/profile.jpg" alt="中村知代已"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
       <div class="av" style="display:none;">👩</div>
       <div><div class="nm">中村 知代已</div><div class="tt">フラワーケーキ教室主宰</div></div>
     </div>
-    <div class="btn-wrap">
-      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">✉ 無料相談・お申し込みはこちら</a>
-      <p class="btn-note">動画＋対面 ¥135,000 ／ 動画＋オンライン ¥114,000</p>
-    </div>
-    <div class="scroll-hint"><span>SCROLL</span><div class="scroll-bar"></div></div>
+    <div class="fv-scroll"><span>SCROLL</span><div class="fv-scroll-bar"></div></div>
   </div>
 </section>
 
-<!-- 2. WORKS -->
-<section id="works">
+<!-- ════ 2. GALLERY ════ -->
+<section id="gallery">
   <div class="container">
-    <div style="text-align:center;margin-bottom:28px;">
-      <p class="sec-label">GALLERY</p>
-      <h2 class="sec-title">こんなお花が絞れるようになります🌸</h2>
+    <div style="text-align:center;margin-bottom:36px;">
+      <span class="sec-en">GALLERY</span>
+      <h2 class="sec-title">こんなお花が絞れるようになります</h2>
+      <div class="rule"></div>
     </div>
-    <div class="works-grid">
-      <div class="ph-box" style="aspect-ratio:1/1;"><img src="images/work1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:4px;"><span class="ic">🌸</span><span>作品1</span></div></div>
-      <div class="ph-box" style="aspect-ratio:1/1;"><img src="images/work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:4px;"><span class="ic">🌹</span><span>作品2</span></div></div>
-      <div class="ph-box" style="aspect-ratio:1/1;"><img src="images/work3.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:4px;"><span class="ic">🌼</span><span>作品3</span></div></div>
+    <div class="gallery-grid">
+      <div class="img-frame" style="aspect-ratio:1/1;">
+        <img src="images/work1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">🌸</span></div>
+      </div>
+      <div class="img-frame" style="aspect-ratio:1/1;">
+        <img src="images/work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">🌹</span></div>
+      </div>
+      <div class="img-frame" style="aspect-ratio:1/1;">
+        <img src="images/work3.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">🌼</span></div>
+      </div>
     </div>
-    <div style="height:12px;"></div>
-    <div class="works-wide">
-      <div class="ph-box" style="aspect-ratio:4/3;"><img src="images/work4.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:4px;"><span class="ic">🌷</span><span>作品4</span></div></div>
-      <div class="ph-box" style="aspect-ratio:4/3;"><img src="images/work5.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:4px;"><span class="ic">🎂</span><span>作品5</span></div></div>
+    <div style="height:3px;"></div>
+    <div class="gallery-wide">
+      <div class="img-frame" style="aspect-ratio:4/3;">
+        <img src="images/work4.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">🌷</span></div>
+      </div>
+      <div class="img-frame" style="aspect-ratio:1/1;">
+        <img src="images/work5.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">🎂</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 3. TROUBLES -->
+<!-- ════ 3. TROUBLES ════ -->
 <section id="troubles">
   <div class="container">
-    <p class="sec-label">こんなお悩みありませんか？</p>
-    <h2 class="sec-title">こんな気持ち、抱えていませんか？</h2>
-    <div class="divider"></div>
+    <span class="sec-en">TROUBLE</span>
+    <h2 class="sec-title">こんなお悩みを<br>抱えていませんか？</h2>
+    <div class="rule-short"></div>
     <div class="trouble-list">
-      <div class="trouble-item"><div class="no">1</div><p>お花絞りやってみたいけど、どうしていいかわからない…</p></div>
-      <div class="trouble-item"><div class="no">2</div><p>上手く絞れない原因が分からなくて、ずっとモヤモヤしている</p></div>
-      <div class="trouble-item"><div class="no">3</div><p>販売・レッスンにしたいけど、自信が持てなくて一歩踏み出せない</p></div>
+      <div class="trouble-item">
+        <div class="no">01</div>
+        <p>お花絞りをやってみたいけれど、何から始めたらよいかわからない</p>
+      </div>
+      <div class="trouble-item">
+        <div class="no">02</div>
+        <p>上手く絞れない原因がわからず、自己流に限界を感じている</p>
+      </div>
+      <div class="trouble-item">
+        <div class="no">03</div>
+        <p>販売・レッスンにしたいけれど、技術への自信が持てない</p>
+      </div>
     </div>
     <div class="trouble-msg">
       そのお気持ち、とてもよくわかります。<br>
-      でも、<strong>正しい基礎と絞りのパターン</strong>を学ぶことで<br>
+      <strong>正しい基礎と絞りのパターン</strong>を学ぶことで<br>
       あなたのお花は必ず変わります。<br><br>
-      そのための講座が、<strong>「お花絞りはじめの一歩」</strong>です✨
+      そのための講座が、<strong>「お花絞りはじめの一歩」</strong>です。
     </div>
   </div>
 </section>
 
-<!-- 4. VIDEO -->
+<!-- ════ 4. VIDEO ════ -->
 <section id="video-sec">
   <div class="container">
-    <div style="text-align:center;margin-bottom:28px;">
-      <p class="sec-label">MOVIE</p>
-      <h2 class="sec-title">レッスンの雰囲気を<br>動画でご覧ください🎬</h2>
+    <div style="text-align:center;margin-bottom:36px;">
+      <span class="sec-en">MOVIE</span>
+      <h2 class="sec-title">レッスンの雰囲気を<br>ご覧ください</h2>
+      <div class="rule"></div>
     </div>
-    <div class="video-wrap">
-      <!--
-        YouTube埋め込み例：
-        <iframe src="https://www.youtube.com/embed/【動画ID】" allowfullscreen></iframe>
-
-        動画ファイルの場合：
-        <video src="images/lesson.mp4" controls playsinline style="width:100%;height:100%;object-fit:cover;"></video>
-      -->
-      <span style="font-size:3rem;opacity:.5;">▶️</span>
-      <span>レッスン動画をここに追加<br><small style="opacity:.6;">YouTube URL または images/lesson.mp4</small></span>
+    <div class="video-wrap" style="max-width:360px;margin:0 auto;">
+      <video src="images/lesson.mov" controls playsinline
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        style="width:100%;height:100%;object-fit:cover;"></video>
+      <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;">
+        <span style="font-size:2.5rem;opacity:.4;">▶</span>
+        <span style="font-size:.82rem;">images/lesson.mov<br>または YouTube URLに差し替え</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 5. BENEFITS -->
+<!-- ════ 5. BENEFITS ════ -->
 <section id="benefits">
   <div class="container">
-    <p class="sec-label">得られること</p>
-    <h2 class="sec-title">受講後の3つの変化✨</h2>
-    <div class="divider"></div>
-    <div class="benefit-cards">
-      <div class="benefit-card">
-        <div class="num">🌹</div>
-        <div><p class="label">BENEFIT 01</p><p class="text">絞れる花の種類が格段に増える</p><p class="desc">パターンを理解するから、新しいお花もすぐに応用できます</p></div>
+    <span class="sec-en">BENEFIT</span>
+    <h2 class="sec-title">受講後に得られる<br>3つの変化</h2>
+    <div class="rule-short"></div>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <div class="benefit-num">01</div>
+        <div class="benefit-body">
+          <p class="benefit-label">FLOWER VARIETY</p>
+          <p class="benefit-title">絞れる花の種類が格段に増える</p>
+          <p class="benefit-desc">パターンを理解することで、新しいお花もすぐに応用できるようになります</p>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="num">💡</div>
-        <div><p class="label">BENEFIT 02</p><p class="text">習っていないお花でも、自分で考えて絞れるようになる</p><p class="desc">「なぜそう絞るか」を学ぶから、応用力が身につきます</p></div>
+      <div class="benefit-item">
+        <div class="benefit-num">02</div>
+        <div class="benefit-body">
+          <p class="benefit-label">ORIGINAL THINKING</p>
+          <p class="benefit-title">習っていないお花でも、考えて絞れるようになる</p>
+          <p class="benefit-desc">「なぜそう絞るか」の原理を学ぶから、応用力が身につきます</p>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="num">⭐</div>
-        <div><p class="label">BENEFIT 03</p><p class="text">基礎から理解してやり切ることで、確かな自信が持てる</p><p class="desc">販売・教室開講への自信につながります</p></div>
+      <div class="benefit-item">
+        <div class="benefit-num">03</div>
+        <div class="benefit-body">
+          <p class="benefit-label">CONFIDENCE</p>
+          <p class="benefit-title">基礎から理解してやり切ることで、確かな自信が持てる</p>
+          <p class="benefit-desc">販売・教室開講へ向けた、ゆるぎない技術の土台になります</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. BEFORE/AFTER -->
-<section id="before-after">
+<!-- ════ 6. LESSON PHOTOS ════ -->
+<section id="lesson-photos">
   <div class="container">
-    <p class="sec-label">BEFORE / AFTER</p>
-    <h2 class="sec-title">受講生さんの<br>作品の変化をご覧ください🌸</h2>
-    <div class="divider"></div>
-    <div class="ba-cards">
-      <div class="ba-card">
-        <div class="ba-imgs">
-          <div class="ba-img-wrap">
-            <img src="images/before1.jpg" alt="受講前" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ph-box" style="display:none;height:100%;border-radius:0;border:none;"><span class="ic" style="font-size:1.5rem;">📷</span><span style="font-size:.75rem;">受講前</span></div>
-            <span class="ba-badge">BEFORE</span>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="images/after1.jpg" alt="受講後" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ph-box" style="display:none;height:100%;border-radius:0;border:none;"><span class="ic" style="font-size:1.5rem;">🌸</span><span style="font-size:.75rem;">受講後</span></div>
-            <span class="ba-badge after">AFTER</span>
-          </div>
-        </div>
-        <div class="ba-text"><strong>Aさん（30代・主婦）</strong><p>受講前は花びらがバラバラだったのが、たった5回で均一に絞れるように！</p></div>
+    <div style="text-align:center;margin-bottom:36px;">
+      <span class="sec-en">LESSON</span>
+      <h2 class="sec-title">レッスンの様子</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="lesson-photo-grid">
+      <div class="img-frame" style="aspect-ratio:4/3;">
+        <img src="images/lesson1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">📷</span><span>lesson1.jpg</span></div>
       </div>
-      <div class="ba-card">
-        <div class="ba-imgs">
-          <div class="ba-img-wrap">
-            <img src="images/before2.jpg" alt="受講前" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ph-box" style="display:none;height:100%;border-radius:0;border:none;"><span class="ic" style="font-size:1.5rem;">📷</span><span style="font-size:.75rem;">受講前</span></div>
-            <span class="ba-badge">BEFORE</span>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="images/after2.jpg" alt="受講後" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ph-box" style="display:none;height:100%;border-radius:0;border:none;"><span class="ic" style="font-size:1.5rem;">🌸</span><span style="font-size:.75rem;">受講後</span></div>
-            <span class="ba-badge after">AFTER</span>
-          </div>
-        </div>
-        <div class="ba-text"><strong>Bさん（40代・教室開講希望）</strong><p>「自信を持って生徒さんに教えられるようになりました」と嬉しいご報告が✨</p></div>
+      <div class="img-frame" style="aspect-ratio:4/3;">
+        <img src="images/lesson2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">📷</span><span>lesson2.jpg</span></div>
+      </div>
+      <div class="img-frame" style="aspect-ratio:4/3;">
+        <img src="images/lesson3.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">📷</span><span>lesson3.jpg</span></div>
+      </div>
+      <div class="img-frame" style="aspect-ratio:4/3;">
+        <img src="images/lesson4.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic">📷</span><span>lesson4.jpg</span></div>
       </div>
     </div>
+    <p class="lesson-caption">— 少人数制の丁寧なレッスンです —</p>
   </div>
 </section>
 
-<!-- 7. LESSON -->
-<section id="lesson">
+<!-- ════ 7. COURSE DETAIL ════ -->
+<section id="course">
   <div class="container">
-    <p class="sec-label">レッスン内容</p>
+    <span class="sec-en">CURRICULUM</span>
     <h2 class="sec-title">全5回のカリキュラム</h2>
-    <div class="divider"></div>
-    <div class="lesson-box">
-      <h3>📋 こんな内容を学びます</h3>
-      <div class="lesson-steps">
-        <div class="lesson-step"><div class="step-num">1</div><div><p class="step-title">クリームの基礎・口金の種類と特性</p><p class="step-desc">道具の選び方から正しいクリームの作り方まで丁寧に解説</p></div></div>
-        <div class="lesson-step"><div class="step-num">2</div><div><p class="step-title">花びらの基本パターンを習得</p><p class="step-desc">絞りの力加減・角度・スピードの感覚をつかむ</p></div></div>
-        <div class="lesson-step"><div class="step-num">3</div><div><p class="step-title">代表的なお花を絞る（ローズ・チューリップ他）</p><p class="step-desc">パターンを理解して、様々なお花に応用していく</p></div></div>
-        <div class="lesson-step"><div class="step-num">4</div><div><p class="step-title">ケーキへのデザイン＆アレンジ</p><p class="step-desc">バランスよく飾る配置のコツ・色の組み合わせ方</p></div></div>
-        <div class="lesson-step"><div class="step-num">5</div><div><p class="step-title">総仕上げ・自由制作</p><p class="step-desc">自分の好きなお花で作品を完成させて自信をつける</p></div></div>
+    <div class="rule-short"></div>
+    <div class="course-box">
+      <h3>— プログラム内容 —</h3>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-no">STEP 01</div>
+          <div><p class="step-text">クリームの基礎・口金の種類と特性</p><p class="step-desc">道具の選び方から正しいクリームの扱い方まで</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-no">STEP 02</div>
+          <div><p class="step-text">花びらの基本パターンを習得</p><p class="step-desc">力加減・角度・スピードの感覚をつかむ</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-no">STEP 03</div>
+          <div><p class="step-text">代表的なお花を絞る（ローズ・チューリップ他）</p><p class="step-desc">パターンを理解して様々なお花に応用していく</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-no">STEP 04</div>
+          <div><p class="step-text">ケーキへのデザイン＆アレンジ</p><p class="step-desc">バランスのよい配置と色の組み合わせ</p></div>
+        </div>
+        <div class="step-item">
+          <div class="step-no">STEP 05</div>
+          <div><p class="step-text">総仕上げ・自由制作</p><p class="step-desc">好きなお花で作品を仕上げて自信をつける</p></div>
+        </div>
       </div>
-      <div class="lesson-format">
-        <div class="format-box"><p class="ftype">対面レッスン</p><p class="fnum">5</p><p class="funit">回</p></div>
-        <div class="format-box"><p class="ftype">オンラインレッスン</p><p class="fnum">5</p><p class="funit">回</p></div>
+      <div class="course-format">
+        <div class="format-item">
+          <p class="ftype">対面レッスン</p>
+          <p class="fnum">5</p>
+          <p class="funit">回</p>
+        </div>
+        <div class="format-item">
+          <p class="ftype">オンラインレッスン</p>
+          <p class="fnum">5</p>
+          <p class="funit">回</p>
+        </div>
       </div>
-      <p style="text-align:center;font-size:.8rem;color:var(--sub);margin-top:10px;">※ 動画教材つきのプログラムです</p>
+      <p style="text-align:center;font-size:.78rem;color:var(--sub);margin-top:12px;font-family:'M PLUS Rounded 1c',sans-serif;">※ 動画教材つきのプログラムです</p>
     </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">✉ まずはLINEで相談してみる</a>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">まずはLINEでご相談ください</a>
     </div>
   </div>
 </section>
 
-<!-- 8. VOICE -->
+<!-- ════ 8. BEFORE/AFTER ════ -->
+<section id="ba">
+  <div class="container">
+    <span class="sec-en">BEFORE / AFTER</span>
+    <h2 class="sec-title">受講生さんの<br>作品の変化</h2>
+    <div class="rule-short"></div>
+    <div class="ba-list">
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div class="ba-img-wrap">
+            <div class="img-frame" style="aspect-ratio:1/1;">
+              <img src="images/before1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic" style="font-size:1.5rem;">📷</span><span style="font-size:.75rem;">受講前</span></div>
+            </div>
+            <span class="ba-label">BEFORE</span>
+          </div>
+          <div class="ba-img-wrap">
+            <div class="img-frame" style="aspect-ratio:1/1;">
+              <img src="images/after1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic" style="font-size:1.5rem;">🌸</span><span style="font-size:.75rem;">受講後</span></div>
+            </div>
+            <span class="ba-label after">AFTER</span>
+          </div>
+        </div>
+        <div class="ba-text"><strong>Aさん（30代・主婦）</strong><p>受講前は花びらがバラバラだったのが、5回で均一に絞れるようになりました。</p></div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div class="ba-img-wrap">
+            <div class="img-frame" style="aspect-ratio:1/1;">
+              <img src="images/before2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic" style="font-size:1.5rem;">📷</span><span style="font-size:.75rem;">受講前</span></div>
+            </div>
+            <span class="ba-label">BEFORE</span>
+          </div>
+          <div class="ba-img-wrap">
+            <div class="img-frame" style="aspect-ratio:1/1;">
+              <img src="images/after2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span class="ic" style="font-size:1.5rem;">🌸</span><span style="font-size:.75rem;">受講後</span></div>
+            </div>
+            <span class="ba-label after">AFTER</span>
+          </div>
+        </div>
+        <div class="ba-text"><strong>Bさん（40代・教室開講希望）</strong><p>「自信を持って生徒さんに教えられるようになりました」とご報告いただきました。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 9. VOICE ════ -->
 <section id="voice">
   <div class="container">
-    <p class="sec-label">VOICE</p>
-    <h2 class="sec-title">受講生さんからの<br>うれしいお声💬</h2>
-    <div class="divider"></div>
-    <div class="voice-cards">
+    <span class="sec-en">VOICE</span>
+    <h2 class="sec-title">受講生さんからの<br>お声</h2>
+    <div class="rule-short"></div>
+    <div class="voice-list">
       <div class="voice-card">
-        <div class="voice-av">
-          <img src="images/voice1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="ph-box" style="display:none;"><span class="ic" style="font-size:1.2rem;">👩</span></div>
-        </div>
-        <div>
-          <p class="voice-name">Aさん（30代・主婦）</p>
-          <p class="voice-stars">★★★★★</p>
-          <p class="voice-text">「なぜこう絞るのか」を丁寧に教えてもらえて、目からウロコでした。今では習っていない花も自分で絞れるようになり、友人へのプレゼントがとても喜ばれています✨</p>
-          <div class="voice-photos">
-            <div class="ph-box" style="aspect-ratio:1/1;border-radius:10px;border:none;"><img src="images/voice1_work.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"><span>🌸</span></div></div>
-            <div class="ph-box" style="aspect-ratio:1/1;border-radius:10px;border:none;"><img src="images/voice1_work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"><span>🌹</span></div></div>
+        <div class="voice-top">
+          <div class="voice-av">
+            <img src="images/voice1.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph"><span style="font-size:1.2rem;">👩</span></div>
           </div>
+          <div>
+            <p class="voice-name">Aさん（30代・主婦）</p>
+            <p class="voice-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="voice-text">「なぜこう絞るのか」を丁寧に教えていただき、目からウロコでした。今では習っていないお花も自分で絞れるようになり、友人へのプレゼントがとても喜ばれています。</p>
+        <div class="voice-works">
+          <div class="img-frame" style="aspect-ratio:1/1;"><img src="images/voice1_work.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span style="font-size:.8rem;">作品写真</span></div></div>
+          <div class="img-frame" style="aspect-ratio:1/1;"><img src="images/voice1_work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span style="font-size:.8rem;">作品写真</span></div></div>
         </div>
       </div>
       <div class="voice-card">
-        <div class="voice-av">
-          <img src="images/voice2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <div class="ph-box" style="display:none;"><span class="ic" style="font-size:1.2rem;">👩</span></div>
-        </div>
-        <div>
-          <p class="voice-name">Bさん（40代・教室開講希望）</p>
-          <p class="voice-stars">★★★★★</p>
-          <p class="voice-text">独学でやっていて変な癖がついていましたが、基礎からやり直せて本当によかったです。受講後に自分の教室を開くことができました🌷</p>
-          <div class="voice-photos">
-            <div class="ph-box" style="aspect-ratio:1/1;border-radius:10px;border:none;"><img src="images/voice2_work.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"><span>🌸</span></div></div>
-            <div class="ph-box" style="aspect-ratio:1/1;border-radius:10px;border:none;"><img src="images/voice2_work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;"><span>🌹</span></div></div>
+        <div class="voice-top">
+          <div class="voice-av">
+            <img src="images/voice2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph"><span style="font-size:1.2rem;">👩</span></div>
           </div>
+          <div>
+            <p class="voice-name">Bさん（40代・教室開講希望）</p>
+            <p class="voice-stars">★★★★★</p>
+          </div>
+        </div>
+        <p class="voice-text">独学でやっていて変な癖がついていましたが、基礎からやり直せて本当によかったです。受講後に自分の教室を開くことができました。</p>
+        <div class="voice-works">
+          <div class="img-frame" style="aspect-ratio:1/1;"><img src="images/voice2_work.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span style="font-size:.8rem;">作品写真</span></div></div>
+          <div class="img-frame" style="aspect-ratio:1/1;"><img src="images/voice2_work2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ph" style="display:none;"><span style="font-size:.8rem;">作品写真</span></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 9. TARGET -->
+<!-- ════ 10. TARGET ════ -->
 <section id="target">
   <div class="container">
-    <p class="sec-label">こんな方へ</p>
-    <h2 class="sec-title">こんな方におすすめです✅</h2>
-    <div class="divider"></div>
-    <div class="target-checks">
-      <div class="target-check"><span class="ck">✔︎</span> お花絞り初心者の方</div>
-      <div class="target-check"><span class="ck">✔︎</span> 独学や他の教室で習いなおしたい方</div>
-      <div class="target-check"><span class="ck">✔︎</span> 作品を販売したい方</div>
-      <div class="target-check"><span class="ck">✔︎</span> 教室の講師をされている方</div>
-      <div class="target-check"><span class="ck">✔︎</span> これからお教室を始めたい方</div>
+    <span class="sec-en">FOR YOU</span>
+    <h2 class="sec-title">こんな方へ</h2>
+    <div class="rule-short"></div>
+    <div class="target-list">
+      <div class="target-item"><span class="mark">◆</span><span>お花絞り初心者の方</span></div>
+      <div class="target-item"><span class="mark">◆</span><span>独学や他の教室で習いなおしたい方</span></div>
+      <div class="target-item"><span class="mark">◆</span><span>作品を販売したい方</span></div>
+      <div class="target-item"><span class="mark">◆</span><span>教室の講師をされている方</span></div>
+      <div class="target-item"><span class="mark">◆</span><span>これからお教室を始めたい方</span></div>
     </div>
   </div>
 </section>
 
-<!-- 10. PRICING -->
+<!-- ════ 11. PRICING ════ -->
 <section id="pricing">
   <div class="container">
-    <p class="sec-label">料金・お申し込み</p>
-    <h2 class="sec-title">プランを選んではじめの一歩を🌸</h2>
-    <div class="divider"></div>
+    <span class="sec-en">PRICE</span>
+    <h2 class="sec-title">料金・お申し込み</h2>
+    <div class="rule-short"></div>
     <div class="price-cards">
       <div class="price-card pop">
         <p class="ptype">動画＋対面</p>
         <p class="pname">対面レッスン<br>5回プラン</p>
         <p class="pamount"><sup>¥</sup>135,000</p>
         <p class="ptax">税込</p>
-        <p class="pdetail">直接見てもらいながら<br>しっかり学びたい方に</p>
+        <p class="pdetail">直接見てもらいながら<br>丁寧に学びたい方へ</p>
       </div>
       <div class="price-card">
         <p class="ptype">動画＋オンライン</p>
         <p class="pname">オンライン<br>5回プラン</p>
         <p class="pamount"><sup>¥</sup>114,000</p>
         <p class="ptax">税込</p>
-        <p class="pdetail">場所を問わず<br>受講したい方に</p>
+        <p class="pdetail">場所を問わず<br>受講したい方へ</p>
       </div>
     </div>
     <div class="btn-wrap">
-      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">✉ 無料相談・お申し込みはこちら</a>
-      <p class="btn-note">LINEにてお気軽にご相談ください。ご質問だけでも大歓迎です🌸</p>
+      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">ご相談・お申し込みはこちら</a>
+      <p class="btn-note">LINEよりお気軽にご連絡ください。ご質問だけでも歓迎です。</p>
     </div>
   </div>
 </section>
 
-<!-- 11. PROFILE -->
+<!-- ════ 12. PROFILE ════ -->
 <section id="profile">
   <div class="container">
-    <p class="sec-label">プロフィール</p>
+    <span class="sec-en">PROFILE</span>
     <h2 class="sec-title">講師紹介</h2>
-    <div class="divider"></div>
+    <div class="rule-short"></div>
     <div class="profile-wrap">
       <div class="profile-photo">
         <img src="images/profile.jpg" alt="中村知代已" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="ph-box" style="display:none;"><span class="ic">👩</span></div>
+        <div class="ph" style="display:none;"><span class="ic">👩</span></div>
       </div>
       <div class="profile-body">
-        <p class="profile-role">フラワーケーキ教室主宰</p>
+        <p class="profile-role">FLOWER CAKE TEACHER</p>
         <h3 class="profile-name">中村 知代已</h3>
-        <p class="profile-text">社会人から製菓の専門学校へ入学し、卒業後はそのまま学校に就職。シュガークラフトをはじめ、見せるケーキの技術を追求する。<br><br>専業主婦を経てケーキ屋勤務、講師業も復活。2021年より自宅教室をスタートし、現在はフラワーケーキを中心に、技術と楽しさを伝えています。</p>
+        <p class="profile-text">
+          社会人から製菓の専門学校へ入学し、卒業後はそのまま学校に就職。シュガークラフトをはじめ、見せるケーキの技術を追求する。<br><br>
+          専業主婦を経てケーキ屋勤務、講師業も復活。2021年より自宅教室をスタートし、現在はフラワーケーキを中心に技術と楽しさを伝えています。
+        </p>
         <div class="profile-badges">
-          <span class="profile-badge">🎂 講師歴 約15年</span>
-          <span class="profile-badge">📜 製菓衛生師</span>
-          <span class="profile-badge">🏆 洋菓子一級技能士</span>
+          <span class="profile-badge">講師歴 約15年</span>
+          <span class="profile-badge">製菓衛生師</span>
+          <span class="profile-badge">洋菓子一級技能士</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 12. FAQ -->
+<!-- ════ 13. FAQ ════ -->
 <section id="faq">
   <div class="container">
-    <p class="sec-label">よくある質問</p>
-    <h2 class="sec-title">FAQ ❓</h2>
-    <div class="divider"></div>
+    <span class="sec-en">FAQ</span>
+    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="rule-short"></div>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q"><span class="ql">Q</span>全くの初心者でも大丈夫ですか？</div>
-        <div class="faq-a">はい、大丈夫です！基礎からしっかり学べるカリキュラムなので、お花絞りが全く初めての方でも安心して受講いただけます🌸</div>
+        <div class="faq-q"><span class="ql">Q</span>全くの初心者でも受講できますか？</div>
+        <div class="faq-a">はい、大丈夫です。基礎からしっかり学べるカリキュラムですので、お花絞りが初めての方でも安心してご受講いただけます。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="ql">Q</span>道具や材料はどうすればいいですか？</div>
-        <div class="faq-a">必要な道具・材料については、お申し込み後に詳しくご案内します。初心者の方でも揃えやすいものをご紹介しますのでご安心ください。</div>
+        <div class="faq-q"><span class="ql">Q</span>道具や材料はどうすればよいですか？</div>
+        <div class="faq-a">お申し込み後に必要な道具・材料を詳しくご案内します。初心者の方でも揃えやすいものをご紹介しますのでご安心ください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="ql">Q</span>対面とオンライン、どちらがおすすめですか？</div>
-        <div class="faq-a">直接見てもらいながら細かいアドバイスを受けたい方は対面、遠方の方や自宅で受講したい方はオンラインがおすすめです。どちらも同じカリキュラムで学べます。</div>
+        <div class="faq-a">直接見ていただきながら細かいアドバイスを受けたい方は対面を、遠方の方や自宅で受講したい方はオンラインをおすすめしています。どちらも同じカリキュラムです。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="ql">Q</span>レッスンの日程は選べますか？</div>
-        <div class="faq-a">はい、ご都合に合わせて日程を調整します。まずはLINEでご相談ください😊</div>
+        <div class="faq-a">はい、ご都合に合わせて日程を調整いたします。まずはLINEでお気軽にご相談ください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="ql">Q</span>受講後のサポートはありますか？</div>
-        <div class="faq-a">受講中はLINEでのご質問も受け付けています。実践の中で出てきた疑問もお気軽にご相談ください🌷</div>
+        <div class="faq-a">受講中はLINEでのご質問も受け付けています。実践の中で出てきた疑問もお気軽にどうぞ。</div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">✉ その他のご質問はLINEへ</a>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://lin.ee/ocpg55Z" class="btn" target="_blank" rel="noopener">その他のご質問はLINEへ</a>
     </div>
   </div>
 </section>
 
-<!-- 13. FOOTER -->
+<!-- ════ 14. FOOTER ════ -->
 <footer>
   <p class="fname">中村 知代已</p>
-  <p class="ftitle">フラワーケーキ教室主宰</p>
-  <div style="margin-bottom:24px;">
-    <a href="https://lin.ee/ocpg55Z" class="footer-btn" target="_blank" rel="noopener">✉ 無料相談・お申し込みはこちら</a>
+  <p class="ftitle">FLOWER CAKE TEACHER / sugar tree</p>
+  <div style="margin-bottom:20px;">
+    <a href="https://lin.ee/ocpg55Z" class="footer-btn" target="_blank" rel="noopener">ご相談・お申し込みはこちら</a>
   </div>
   <a href="https://www.instagram.com/sugar_tree_2021?igsh=cGUxcW9oNGkxdHB4&utm_source=qr" class="sns-link" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     @sugar_tree_2021
   </a>
-  <p class="copy">© 2024 中村知代已 フラワーケーキ教室 All Rights Reserved.</p>
+  <p class="copy">© 2024 中村知代已 sugar tree All Rights Reserved.</p>
 </footer>
 
 </body>
